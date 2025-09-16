@@ -1,23 +1,24 @@
-import java.util.HashMap;
-import java.util.Scanner;
+import java.sql.Connection;
 
 import Backend.models.Client;
-import Test.user.User;
-import Test.user.UserRole;
+import DAO.ClientDao;
 
 public class Main {
     public static void main(String[] args) {
-        UserRole get_user_role = new UserRole();
-        String user_role = get_user_role.getUserRole();
-        if (user_role.toLowerCase().equals("client") || user_role.equals("1")) {
-            User userObg = new User();
-            HashMap<String, String> user = userObg.getInfoUser();
-            System.out.println(user);
+        DatabaseInitializer dbConnect = new DatabaseInitializer();
+        dbConnect.initializeDatabase("jdbc:mysql://localhost:3306/", "mydatabase", "root", "otobot");
 
-            // Client client = new Client(user.nom, user.prenom, user.email, tele, adresse,pwd, 0);
-
-        } else {
-            System.out.println("mechanique !");
+        Connection conn = DatabaseInitializer.getConnection("jdbc:mysql://localhost:3306/", "mydatabase", "root",
+                "otobot");
+        try (conn) {
+            Client client = new Client("ELGHABA", "SAAD", "saadlraba@gmail.com", "0694696593", "MARRAKECH", "1234567",
+                    0);
+            // System.out.println(client.getAdresse());
+            ClientDao clientdao = new ClientDao(conn);
+            clientdao.insertClient(client);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
 }

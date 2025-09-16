@@ -27,7 +27,7 @@ public class Client implements Utilisateur {
         this.role = "CLIENT";
     }
 
-    public static client fromMap(hashMap)
+    // public static client fromMap(hashMap)
 
 
     @Override
