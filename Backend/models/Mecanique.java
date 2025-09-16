@@ -1,6 +1,6 @@
 package Backend.models;
 
-public class Garagistre implements Utilisateur {
+public class Mecanique implements Utilisateur {
     private int id;
     private String nom;
     private String prenom;
@@ -11,7 +11,7 @@ public class Garagistre implements Utilisateur {
     private String role;
     private Garage garage;
 
-    public Garagistre(String nom, String prenom, String email, String motDePasse, String telephone, String adresse, Garage garage, int id) {
+    public Mecanique(String nom, String prenom, String email, String motDePasse, String telephone, String adresse, Garage garage, int id) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -19,7 +19,7 @@ public class Garagistre implements Utilisateur {
         this.motDePasse = motDePasse;
         this.telephone = telephone;
         this.adresse = adresse;
-        this.role = "GARAGISTRE";
+        this.role = "MECANICIEN";
         this.garage = garage;
     }
     @Override

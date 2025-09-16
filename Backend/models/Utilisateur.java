@@ -1,4 +1,4 @@
-package  Backend.models;
+package Backend.models;
 
 public interface Utilisateur {
 
