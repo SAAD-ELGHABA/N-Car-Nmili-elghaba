@@ -1,7 +1,10 @@
 package Backend.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Client implements Utilisateur {
-    private int id; 
+    private int id;
     private String nom;
     private String prenom;
     private String email;
@@ -10,7 +13,10 @@ public class Client implements Utilisateur {
     private String motDePasse;
     private String role;
 
-    public Client(String nom, String prenom, String email, String telephone, String adresse, String motDePasse, int id) {
+    private List<Voiture> voitures = new ArrayList<>();
+
+    public Client(String nom, String prenom, String email, String telephone, String adresse, String motDePasse,
+            int id) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -18,7 +24,17 @@ public class Client implements Utilisateur {
         this.telephone = telephone;
         this.adresse = adresse;
         this.motDePasse = motDePasse;
-        this.role = "client"; 
+        this.role = "CLIENT";
+    }
+
+    @Override
+    public int getId() {
+        return this.id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
@@ -90,5 +106,18 @@ public class Client implements Utilisateur {
     public void setRole(String role) {
         this.role = role;
     }
-    
+
+    public List<Voiture> getVoitures() {
+        return this.voitures;
+    }
+
+    public void setVoitures(List<Voiture> voitures) {
+        this.voitures = voitures;
+    }
+
+    public void addVoiture(Voiture voiture) {
+        this.voitures.add(voiture);
+        voiture.setProprietaire(this);
+    }
+
 }

@@ -1,7 +1,7 @@
 package Backend.models;
 
 public interface Utilisateur {
-
+    int getId();
     String getNom();
     String getPrenom();
     String getEmail();
@@ -9,6 +9,7 @@ public interface Utilisateur {
     String getAdresse();
     String getMotDePasse();
     String getRole();
+    void setId(int id);
     void setNom(String nom);
     void setPrenom(String prenom);
     void setEmail(String email);
