@@ -5,11 +5,8 @@ import java.sql.Statement;
 
 public class DatabaseInitializer {
 
-    public static void initializeDatabase() {
-        String url = "jdbc:mysql://localhost:3306/";
-        String dbName = "mydatabase";
-        String user = "root";
-        String password = "otobot";
+    public static void initializeDatabase(String url, String dbName, String user, String password) {
+        
 
         try (Connection connexion = DriverManager.getConnection(url, user, password);
                 Statement stmt = connexion.createStatement()) {
@@ -36,6 +33,6 @@ public class DatabaseInitializer {
     }
 
     public static void main(String[] args) {
-        initializeDatabase();
+        initializeDatabase("","","","");
     }
 }

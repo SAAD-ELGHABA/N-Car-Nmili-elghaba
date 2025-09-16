@@ -1,6 +1,7 @@
 package Backend.models;
 
 public interface Utilisateur {
+    
     int getId();
     String getNom();
     String getPrenom();
