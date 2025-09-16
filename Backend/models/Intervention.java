@@ -1,4 +1,4 @@
-package Garagiste.Backend.models;
+package Backend.models;
 
 public class Intervention {
     private int id;

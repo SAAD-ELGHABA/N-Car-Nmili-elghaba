@@ -1,4 +1,4 @@
-package Garagiste.Backend.models;
+package Backend.models;
 
 public class Client implements Utilisateur {
     private int id; 
