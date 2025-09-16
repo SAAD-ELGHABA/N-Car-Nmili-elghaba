@@ -8,7 +8,10 @@ public class DatabaseInitializer {
     public static Connection getConnection(String url, String dbName, String user, String password) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection(url, user, password);
+            Connection connexion = DriverManager.getConnection(url, user, password);
+            Statement stmt = connexion.createStatement();
+            stmt.execute("USE " + dbName);
+            return connexion;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             return null;
