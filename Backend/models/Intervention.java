@@ -1,4 +1,4 @@
-package Garagiste.Backend.models;
+package Backend.models;
 
 public class Intervention {
     private int id;
@@ -6,18 +6,18 @@ public class Intervention {
     private String date;
     private double cout;
     private Voiture voiture;
-    private Garagistre garagistre;
+    private Mecanique mecanique;
     private Client client;
     private String statut; 
     private String type; 
 
-    public Intervention(String description, String date, double cout, Voiture voiture, Garagistre garagistre, Client client, String statut, String type, int id) {
+    public Intervention(String description, String date, double cout, Voiture voiture, Mecanique garagistre, Client client, String statut, String type, int id) {
         this.id = id;
         this.description = description;
         this.date = date;
         this.cout = cout;
         this.voiture = voiture;
-        this.garagistre = garagistre;
+        this.mecanique = garagistre;
         this.client = client;
         this.statut = statut;
         this.type = type;
@@ -42,16 +42,16 @@ public class Intervention {
         this.cout = cout;
     }
     public Voiture getVoiture() {
-        return voiture;
+        return this.voiture;
     }
     public void setVoiture(Voiture voiture) {
         this.voiture = voiture;
     }
-    public Garagistre getGaragistre() {
-        return garagistre;
+    public Mecanique getMecanique() {
+        return this.mecanique;
     }
-    public void setGaragistre(Garagistre garagistre) {
-        this.garagistre = garagistre;
+    public void setGaragistre(Mecanique mecanique) {
+        this.mecanique = mecanique;
     }
     public Client getClient() {
         return client;

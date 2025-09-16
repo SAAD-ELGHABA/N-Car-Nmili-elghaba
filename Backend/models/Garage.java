@@ -1,4 +1,4 @@
-package Garagiste.Backend.models;
+package Backend.models;
 
 public class Garage {
     private int id;
@@ -7,7 +7,7 @@ public class Garage {
     private String telephone;
     private String email;
 
-    public Garage(String nom, String adresse, String telephone, String email,int) {
+    public Garage(String nom, String adresse, String telephone, String email,int id) {
         this.id = id;
         this.nom = nom;
         this.adresse = adresse;
